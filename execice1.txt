@@ -1,0 +1,10 @@
+Develop a complex workflow:
+- workflow file in a new repo 
+- push trigger 
+- four jobs 
+- print the date 
+- job 1 - ubuntu lts
+- job 2 - windows lts
+- job 3 - macos lts
+- job 4 - the runner of my choice - create a dependency on the job 1,2,3
+
