@@ -21,4 +21,4 @@ jobs:
     needs: [job1, job2, job3]
     steps:
       - name: step1
-        run: step1
+        run: date
