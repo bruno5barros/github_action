@@ -7,14 +7,20 @@ jobs:
     upload_artifact:
         runs-on: ubuntu-latest
         steps:
-            - name: checkout
-              uses: actions/checkout@v4
             - name: print files and location
               run: |
                 ls -l
                 pwd
+            - name: checkout
+              uses: actions/checkout@v4
+              with: 
+                ref: main
             - name: upload_artifact
               uses: actions/upload-artifact@v4
               with:
                 name: ${{ env.ARTIFACT_NAME }}
                 path: .
+            - name: print files and location
+              run: |
+                  ls -l
+                  pwd
