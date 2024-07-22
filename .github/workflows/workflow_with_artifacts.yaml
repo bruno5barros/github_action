@@ -8,12 +8,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: checkout
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
             - name: upload_artifact
-              uses: actions/upload-artifact@v2
+              uses: actions/upload-artifact@v3
               with:
                 name: ${{ env.ARTIFACT_NAME }}
-                path: ${{ env.PATH }}
+                path: .
             - name: print files and location
               run: |
                 ls -l
