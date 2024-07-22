@@ -2,12 +2,14 @@ name: Workflow with artifacts
 on: [push]
 env:
   ARTIFACT_NAME: api_artifact
+  ARTIFACT_PATH: .
 jobs: 
     upload_artifact:
         runs-on: ubuntu-latest
         steps:
             - name: print files and location
               run: |
+                ls -l
                 pwd
             - name: checkout
               uses: actions/checkout@v4
@@ -17,7 +19,8 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                 name: ${{ env.ARTIFACT_NAME }}
-                path: .
+                path: ${{ env.ARTIFACT_PATH }}
             - name: print files and location
               run: |
-                  ls -l
+                ls -l
+                pwd
