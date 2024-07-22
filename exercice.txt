@@ -1,0 +1,4 @@
+- create a workflow
+- use push trigger event 
+- environment var for the artifact name
+- the job should have two step: checkout and upload-artifact

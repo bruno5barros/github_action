@@ -1,0 +1,14 @@
+name: Workflow with artifacts
+on: [push]
+jobs: 
+    upload_artifact:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout
+              uses: actions/checkout@v4
+            - name: upload_artifact
+              uses: actions/upload-artifact@v4
+            - name: print files and location
+              run: |
+                ls -l
+                pwd
