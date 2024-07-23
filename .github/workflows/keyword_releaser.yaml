@@ -5,6 +5,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
+            - name: Disable SSL verification
+              run: |
+                git config --global http.sslVerify false
+                export GIT_SSL_NO_VERIFY=true
             - uses: bruno5barros/custom_action@main
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
